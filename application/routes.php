@@ -31,11 +31,14 @@
 |		});
 |
 */
+Route::get('register', array('as' => 'register', 'uses' => 'register@register'));
+Route::post('register', array('as' => 'register', 'uses' => 'register@register'));
+Route::Controller('register');
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+// Route::get('/', function()
+// {
+// 	return View::make('home.index');
+// });
 
 /*
 |--------------------------------------------------------------------------
