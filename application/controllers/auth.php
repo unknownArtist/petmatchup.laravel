@@ -31,7 +31,8 @@ class Auth_Controller extends Base_Controller {
         }
         
         $number = Str::random(15);
-        $hash = Hash::make('number');
+        // $hash = Hash::make('number'); // sehrish have a look what you were trying to do 
+        $hash = Hash::make($number);
         
             Message::to(Input::get('email'))
                 ->from('no-reply@e.mp', 'EmpireCRM Admin')
