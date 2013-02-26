@@ -31,9 +31,16 @@
 |		});
 |
 */
-Route::get('register', array('as' => 'register', 'uses' => 'register@register'));
-Route::post('register', array('as' => 'register', 'uses' => 'register@register'));
-Route::Controller('register');
+Route::get('auth/register', array('as' => 'register', 'uses' => 'auth@register'));
+Route::post('auth/register', array('as' => 'register', 'uses' => 'auth@register'));
+Route::Controller('auth');
+
+Route::get('login', array('as' => 'login', 'uses' => 'login@login'));
+Route::post('login', array('as' => 'login', 'uses' => 'login@login'));
+Route::Controller('login');
+
+
+
 
 // Route::get('/', function()
 // {

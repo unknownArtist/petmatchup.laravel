@@ -1,6 +1,6 @@
 
 
- {{ Form::open('register', 'POST') }}
+ {{ Form::open('auth/register', 'POST') }}
 
       {{ Form::token() }}
       
@@ -10,10 +10,7 @@
 
       {{ Form::text('email', Input::Old('email') , array('id'=>'email', 'class' => 'input-block-level', 'placeholder' => 'Email address')) }}
 
-      {{ Form::password('password' , array('id'=>'password', 'class' => 'input-block-level', 'placeholder' => 'Password')) }}
- 
-      {{ Form::password('password_confirm', array('id'=>'password_confirm', 'class' => 'input-block-level', 'placeholder' => 'Confirm Password'))  }}
-
+      {{ Form::text('friend1', Input::Old('friend1') , array('id'=>'friend1', 'class' => 'input-block-level', 'placeholder' => 'Email address')) }}
 
       <div class="submit_sect">
       {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary align-right')) }}
