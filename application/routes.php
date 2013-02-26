@@ -39,8 +39,9 @@ Route::get('login', array('as' => 'login', 'uses' => 'login@login'));
 Route::post('login', array('as' => 'login', 'uses' => 'login@login'));
 Route::Controller('login');
 
-
-
+Route::get('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
+Route::post('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
+Route::Controller('profile');
 
 // Route::get('/', function()
 // {

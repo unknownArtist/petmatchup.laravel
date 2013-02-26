@@ -12,24 +12,17 @@ class Login_Controller extends Base_Controller {
 
     public function post_login()
     {
-    	$credentials = array(
-    	'username' => Input::get('email'),
-        'password' => Input::get('password'),
-    	);
     	
-
-		if (Auth::attempt($credentials))
-		{
-			return "You're logged in!";
-	     
+    	if(Auth::attempt(array(	'username' => Input::get('email'),	'password' => Input::get('password'))))
+		{		
+			echo "User is logged in!";
 		}
-	
+		
         else
         {
         	return Redirect::to('login');
         }
        
-
     }
 
 

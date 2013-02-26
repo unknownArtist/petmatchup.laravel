@@ -2,7 +2,7 @@
 
       {{ Form::token() }}
 
-      {{ Form::text('email', Input::Old('email') , array('id'=>'email', 'class' => 'input-block-level', 'placeholder' => 'Email address')) }}
+      {{ Form::text('email', Input::Old('email') , array('id'=>'email', 'class' => 'input-block-level', 'placeholder' => 'Email')) }}
 
       {{ Form::text('password', Input::Old('password') , array('id'=>'password', 'class' => 'input-block-level', 'placeholder' => 'Password')) }}
 
