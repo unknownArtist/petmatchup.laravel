@@ -31,11 +31,22 @@
 |		});
 |
 */
+Route::get('auth/register', array('as' => 'register', 'uses' => 'auth@register'));
+Route::post('auth/register', array('as' => 'register', 'uses' => 'auth@register'));
+Route::Controller('auth');
 
-Route::get('/', function()
-{
-	return View::make('home.index');
-});
+Route::get('login', array('as' => 'login', 'uses' => 'login@login'));
+Route::post('login', array('as' => 'login', 'uses' => 'login@login'));
+Route::Controller('login');
+
+Route::get('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
+Route::post('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
+Route::Controller('profile');
+
+// Route::get('/', function()
+// {
+// 	return View::make('home.index');
+// });
 
 /*
 |--------------------------------------------------------------------------
