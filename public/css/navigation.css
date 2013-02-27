@@ -1,0 +1,20 @@
+
+
+.navigation{background:url(../images/bg-menu.gif) top repeat-x; margin-top:30px; height:40px; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px; box-shadow:1px 1px 3px rgba(0,0,0,.1); -moz-box-shadow:1px 1px 3px rgba(0,0,0,.1); -webkit-box-shadow:1px 1px 3px rgba(0,0,0,.1);}
+
+.sf-menu,.sf-menu *{list-style:none; margin:0px; padding:0px;}
+.sf-menu{line-height:1.0; z-index:497;}
+.sf-menu ul{position:absolute; top:-99999em; width:12em;}
+.sf-menu ul li{width:100%;}
+.sf-menu li:hover{visibility:inherit;}
+.sf-menu li{float:left; position:relative; z-index:498;}
+.sf-menu a{display:block; position:relative;}
+
+
+#superfish-1 li{background:url(../images/bg-li-menu.gif) no-repeat right 0; border:0; overflow:inherit; padding:0px; text-align:center;}
+#superfish-1 li.last{background:none;}
+#superfish-1 a,#superfish-1 a:visited{ font-family:"Trebuchet MS"; font-size:12px; color:#505150; font-weight:bold; padding:16px 0 !important; border:0; text-decoration:none; text-shadow:1px 1px 0 rgba(255,255,255,.8); text-transform:uppercase; width:137px; -webkit-transition:color .3s ease; -moz-transition:color .3s ease;}
+#superfish-1 a:hover,#superfish-1 a.active{background:url(../images/bg-li-main.png) top repeat-x; color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,.8);}
+#superfish-1 .first a:hover,#superfish-1 .first a.active{background:url(../images/bg-li-first.png) no-repeat 0 0;}
+#superfish-1 .last a:hover,#superfish-1 .last a.active{background:url(../images/bg-li-last.png) no-repeat right 0; }
+
