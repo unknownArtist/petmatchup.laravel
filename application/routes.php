@@ -40,9 +40,17 @@ Route::get('login', array('as' => 'login', 'uses' => 'login@login'));
 Route::post('login', array('as' => 'login', 'uses' => 'login@login'));
 Route::Controller('login');
 
+Route::get('profile/index',  array('as' => 'index', 'uses' => 'profile@index' ) );
+Route::post('profile/index',  array('as' => 'index', 'uses' => 'profile@index' ) );
+Route::get('profile/(:num)/edit',  array('as' => 'edit', 'uses' => 'profile@edit' ) );
+Route::post('profile/(:num)/edit',  array('as' => 'edit', 'uses' => 'profile@edit' ) )
 Route::get('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
 Route::post('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
 Route::Controller('profile');
+
+Route::get('contact/index', array('as' => 'index', 'uses' => 'contact@index'));
+Route::post('contact/index', array('as' => 'index', 'uses' => 'contact@index'));
+Route::Controller('contact');
 
 // Route::get('/', function()
 // {
