@@ -15,7 +15,8 @@ class Login_Controller extends Base_Controller {
     	
     	if(Auth::attempt(array(	'username' => Input::get('email'),	'password' => Input::get('password'))))
 		{		
-			echo "User is logged in!";
+			// echo "User is logged in!";
+            return Response::json(array('logn'=>'successfull'));
 		}
 		
         else
