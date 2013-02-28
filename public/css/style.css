@@ -13,6 +13,7 @@ img{ border:none;}
 #header .socialmedia{ margin:25px 0 0 0;}
 #header .socialimg{ float:right; margin:0 5px 0 0;}
 #header .searchsection{ margin:25px 0 0 0;}
+.searchsection{width:450px; float:right;}
 
 .container-inline div,.container-inline label{display:inline;}
 .element-invisible{position:absolute !important; clip:rect(1px 1px 1px 1px); clip:rect(1px,1px,1px,1px);}
@@ -21,7 +22,7 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 
 #block-system-user-menu{float:left; background:url(../images/user-menu.png) no-repeat 0 0;}
 #block-system-user-menu .content{padding:5px 20px 0 32px;}
-#block-system-user-menu .content li a{font-family:"Trebuchet MS"; font-size:16px; font-weight:bold; color:#292929; text-decoration:none; text-transform:capitalize; letter-spacing:-1.2px; text-shadow:1px 1px 1px rgba(0,0,0,.2); -webkit-transition:color .2s ease-out; -moz-transition:color .2s ease-out;}
+#block-system-user-menu .content li a{font-family:"Trebuchet MS"; font-size:16px; font-weight:bold; color:#292929; text-decoration:none; text-transform:capitalize; letter-spacing:-1.2px; text-shadow:1px 1px 1px rgba(0,0,0,.2); -webkit-transition:color .2s ease-out; -moz-transition:color .2s ease-out; width:80px; float:left;}
 #block-system-user-menu .content li a:hover{color:#EF6E14}
 #block-search-form{padding:0px 6px 10px 21px; float:right; background:url(../images/bg-searchform.png) no-repeat 0 2px;}
 #search-block-form .form-text{background:#ffffff; border:0px; border-top:1px solid #aeaeae; font-family:Arial; font-size:12px; color:#757575; line-height:normal; margin-right:-38px; padding:7px 0 8px 5px; width:213px; -webkit-box-sizing:content-box; -webkit-appearance:none; border-radius:15px; -moz-border-radius:15px; -webkit-border-radius:15px;}
@@ -97,12 +98,14 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 
 .loginform input
 {
-	background:url(../images/bg-menu.gif) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px; box-shadow:1px 1px 3px rgba(0,0,0,.1); -moz-box-shadow:1px 1px 3px rgba(0,0,0,.1); -webkit-box-shadow:1px 1px 3px rgba(0,0,0,.1);
+	background:url(../images/bg-menu.gif) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;
 	text-indent:7px;
-	border:0px;
+	border:1px solid #505150;
 	height:22px;
 	margin-top:5px;
 	width:151px;
+	font-family:"Trebuchet MS";
+	color:#505150;
 }
 
 .signinbtn
@@ -114,9 +117,16 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 .signinbtn input
 {
 	color:#505150;
-	text-align:left;
-	width:70px;
-	margin-right:5px;
+	width:65px;
+	height:23px;
+	text-indent:0px;
+	cursor:pointer;
+	-webkit-transition:color .4s ease;
+	-moz-transition:color .4s ease;
+	font-weight:500;
+	margin-left:2px;
+	padding-top:0px;
+	text-align:center;
 }
 
 .signinbtn input:hover
@@ -126,7 +136,7 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 
 .loginforma
 {
-	margin-top:10px;
+	margin-top:8px;
 	width:100px;
 	float:left;
 }
@@ -136,11 +146,65 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 	font-family:"Trebuchet MS";
 	color:#06F;
 	font-size:12px;
+	-webkit-transition:color .2s ease-out;
+	-moz-transition:color .2s ease-out;
 }
 
 .loginforma a:hover
 {
 	color:#F60;
+}
+
+.register
+{
+	width:360px;
+	margin:50px auto 0 auto;
+	height:307px;
+}
+
+.register input
+{
+	background:url(../images/bg-menu.gif) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;
+	text-indent:10px;
+	border:1px solid #505150;
+	height:28px;
+	margin-top:20px;
+	width:230px;
+	font-family:"Trebuchet MS";
+	color:#505150;
+}
+
+.register label
+{
+	font-family:"Trebuchet MS";
+	color:#505150;
+}
+
+.register input:nth-child(3)
+{
+	margin-left:5px;
+}
+
+.registerbtn
+{	
+	float:right;
+	margin-right:15px;
+}
+
+.registerbtn input
+{
+	width:85px;
+	text-indent:0px;
+	color:#505150;
+	cursor:pointer;
+	-webkit-transition:color .4s ease;
+	-moz-transition:color .4s ease;
+	padding-top:0px;
+}
+
+.registerbtn input:hover
+{
+	background:url(../images/bg-li-main.png) top repeat-x; color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,.8);	
 }
 
 
