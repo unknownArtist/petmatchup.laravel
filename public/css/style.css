@@ -100,7 +100,7 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 {
 	background:url(../images/bg-menu.gif) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;
 	text-indent:7px;
-	border:1px solid #505150;
+	border:2px solid #505150;
 	height:22px;
 	margin-top:5px;
 	width:151px;
@@ -157,7 +157,7 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 
 .register
 {
-	width:370px;
+	width:450px;
 	margin:50px auto 0 auto;
 	height:307px;
 }
@@ -166,7 +166,7 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 {
 	background:url(../images/bg-menu.gif) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;
 	text-indent:10px;
-	border:1px solid #505150;
+	border:2px solid #505150;
 	height:28px;
 	margin-top:20px;
 	width:230px;
@@ -207,4 +207,68 @@ ul li.leaf{list-style-image:none; list-style-type:none; margin:0; padding:0;}
 	background:url(../images/bg-li-main.png) top repeat-x; color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,.8);	
 }
 
+.contactus
+{
+	width:500px;
+	margin:20px auto 0 auto;
+	height:420px;
+}
+
+.contactus input
+{
+	background:url(../images/bg-menu.gif) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;
+	text-indent:10px;
+	border:2px solid #505150;
+	height:28px;
+	margin-top:20px;
+	width:230px;
+	font-family:"Trebuchet MS";
+	color:#505150;
+}
+
+.contactus label
+{
+	font-family:"Trebuchet MS";
+	color:#505150;
+}
+
+.contactus input:nth-child(3)
+{
+	margin-left:5px;
+}
+
+textarea
+{
+	margin-left:80px;
+	border:2px solid #505150;
+	background:url(../images/txt-menu.png) top repeat-x; position:relative; z-index:500; border-radius:20px; -moz-border-radius:20px; -webkit-border-radius:20px;
+	text-indent:15px;
+	font-family:"Trebuchet MS";
+	color:#505150;
+	width:305px;
+	height:170px;
+	margin-left:110px;
+	margin-top:-17px;
+	padding-right:15px;
+}
+
+.contactbtn
+{
+	margin-left:245px;
+}
+
+.contactbtn input
+{
+	width:75px;
+	text-indent:0px;
+	color:#505150;
+	cursor:pointer;
+	-webkit-transition:color .4s ease;
+	-moz-transition:color .4s ease;
+}
+
+.contactbtn input:hover
+{
+	background:url(../images/bg-li-main.png) top repeat-x; color:#fff; text-shadow:1px 1px 0 rgba(0,0,0,.8);	
+}
 

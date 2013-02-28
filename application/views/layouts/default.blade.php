@@ -102,7 +102,7 @@
 					<li><a href="#" title="Dogs for Sale">Dogs for Sale</a></li>
 					<li><a href="#" title="Gogs for Adoption">Gogs for Adoption</a></li>
 					<li><a href="#" title="Post a Profile">Post a Profile</a></li>
-					<li class="last"><a href="#" title="Contact Us">Contact Us</a></li>
+					<li class="last"><a href="contact" title="Contact Us">Contact Us</a></li>
 				</ul>
 			</div>
             
