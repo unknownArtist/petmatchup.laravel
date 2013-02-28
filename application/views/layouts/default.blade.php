@@ -7,22 +7,23 @@
 <title>Petmatchup - Find your pet</title>
 
 <link href="css/style.css" rel="stylesheet" type="text/css" />
-<!--{{ HTML::style('css/style.css') }}-->
+{{ HTML::style('css/style.css') }}
 <link href="css/navigation.css" rel="stylesheet" type="text/css" />
-<!--{{ HTML::style('css/navigation.css') }}-->
+{{ HTML::style('css/navigation.css') }}
 
 <script type="text/javascript" src="fonts/cufon-yui.js"></script>
-<!--{{ HTML::script('fonts/cufon-yui.js'); }}-->
+{{ HTML::script('fonts/cufon-yui.js'); }}
 <script type="text/javascript"  src="fonts/Helvetica_500-Helvetica_700.font.js"></script>
-<!--{{ HTML::script('fonts/Helvetica_500-Helvetica_700.font.js'); }}-->
+{{ HTML::script('fonts/Helvetica_500-Helvetica_700.font.js'); }}
 <script type="text/javascript">  
     Cufon.replace('h2,h3');
 </script>
 
 <script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
-<!--{{ HTML::script('js/jquery-1.5.2.min.js'); }}-->
+{{ HTML::script('js/jquery-1.5.2.min.js'); }}
 <script src="js/jquery.faded.js" type="text/javascript"></script>
-<!--{{ HTML::script('js/jquery.faded.js'); }}-->
+
+{{ HTML::script('js/jquery.faded.js'); }}
 <script type="text/javascript">
 	   $(function(){
 	        $("#faded").faded();
@@ -41,27 +42,27 @@
 			
 			<!--Header Section-->
 			<div id="header">
-				<div class="logodiv"><a href="index.html" title="Petmatchup"><img src="./images/logo.png" alt="Home"></a></div>
+				<div class="logodiv"><a href="index.html" title="Petmatchup"><!--<img src="./images/logo.png" alt="Home">-->{{ HTML::image('./images/logo.png'); }}</a></div>
 				<div class="headerright">
 				
 					
 					<!--Social Media Section-->
 					<div class="socialmedia">
-						<div class="socialimg"><a href="#" title="Follow us on Social Media"><img src="images/social-icon4.png" /></a></div>
-						<div class="socialimg"><a href="#" title="Follow us on Social Media"><img src="images/social-icon3.png" /></a></div>
-						<div class="socialimg"><a href="#" title="Follow us on Google Plus"><img src="images/googleplus-icon.png" /></a></div>
-						<div class="socialimg"><a href="#" title="Follow us on Facebook"><img src="images/facebook-icon.png" /></a></div>
+						<div class="socialimg"><a href="#" title="Follow us on Social Media">
+                        <!--<img src="images/social-icon4.png" />-->{{ HTML::image('images/social-icon4.png'); }}</a></div>
+						<div class="socialimg"><a href="#" title="Follow us on Social Media">
+                        <!--<img src="images/social-icon3.png" />-->{{ HTML::image('images/social-icon3.png'); }}</a></div>
+						<div class="socialimg"><a href="#" title="Follow us on Google Plus">
+                        <!--<img src="images/googleplus-icon.png" />-->{{ HTML::image('./images/googleplus-icon.png'); }}</a></div>
+						<div class="socialimg"><a href="#" title="Follow us on Facebook">
+                        <!--<img src="images/facebook-icon.png" />-->{{ HTML::image('images/facebook-icon.png'); }}</a></div>
 						<div class="clear"></div>
 					</div>
 					
 					
 					<!--Header Search Section-->
 					<div class="searchsection">
-						<div id="block-system-user-menu">
-							<div class="content">
-								<ul class="menu"><li><a href="#" title="Client Login">Client Login</a></li></ul>
-							</div>
-						</div>
+						
                         
                         <div class="loginform">
 						{{ Form::open('login', 'POST') }}
@@ -70,13 +71,9 @@
 
       {{ Form::text('email', Input::Old('email') , array('id'=>'email', 'class' => 'input-block-level', 'placeholder' => 'Email')) }}
 
-      {{ Form::text('password', Input::Old('password') , array('id'=>'password', 'class' => 'input-block-level', 'placeholder' => 'Password')) }}
-      
-      
+      {{ Form::text('password', Input::Old('password') , array('id'=>'password', 'class' => 'input-block-level', 'placeholder' => 'Password')); }}  
 
-      <div class="signinbtn">
-      
-     
+      <div class="signinbtn">     
      
       {{ Form::submit('Sign In', array('class'=>'btn btn-large btn-primary align-right')) }}
       </div>
