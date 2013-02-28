@@ -33,6 +33,7 @@
 */
 Route::get('auth/register', array('as' => 'register', 'uses' => 'auth@register'));
 Route::post('auth/register', array('as' => 'register', 'uses' => 'auth@register'));
+Route::get('contact', array('uses' => 'contact@index'));
 Route::Controller('auth');
 
 Route::get('login', array('as' => 'login', 'uses' => 'login@login'));
