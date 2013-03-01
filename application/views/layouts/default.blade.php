@@ -76,6 +76,7 @@
       <div class="signinbtn">     
      
       {{ Form::submit('Sign In', array('class'=>'btn btn-large btn-primary align-right')) }}
+      
       </div>
 
     {{ Form::close() }}
