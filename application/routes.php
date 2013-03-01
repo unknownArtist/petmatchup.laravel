@@ -43,10 +43,15 @@ Route::Controller('login');
 Route::get('profile/index',  array('as' => 'index', 'uses' => 'profile@index' ) );
 Route::post('profile/index',  array('as' => 'index', 'uses' => 'profile@index' ) );
 Route::get('profile/(:num)/edit',  array('as' => 'edit', 'uses' => 'profile@edit' ) );
-Route::post('profile/(:num)/edit',  array('as' => 'edit', 'uses' => 'profile@edit' ) )
+Route::post('profile/(:num)/edit',  array('as' => 'edit', 'uses' => 'profile@edit' ) );
 Route::get('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
 Route::post('profile/new',  array('as' => 'new', 'uses' => 'profile@new' ) );
+Route::get('profile/(:any)/delete', array('uses'=>'profile@delete'));
 Route::Controller('profile');
+
+Route::get('search/index',  array('as' => 'index', 'uses' => 'search@index' ) );
+Route::post('search/index',  array('as' => 'index', 'uses' => 'search@index' ) );
+Route::Controller('search');
 
 Route::get('contact/index', array('as' => 'index', 'uses' => 'contact@index'));
 Route::post('contact/index', array('as' => 'index', 'uses' => 'contact@index'));

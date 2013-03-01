@@ -2,6 +2,9 @@
 
  {{ $value->name }}
   <a href="{{ URL::to("profile/". $value->id."/edit") }}" class="btn btn-mini" alt="Edit">
-                        <i class="icon-edit"></i> Edit
+                        Edit
+                    </a> 
+   <a href="{{ URL::to("profile/". $value->id."/delete") }}" class="btn btn-mini" alt="Delete">
+                        Delete
                     </a> 
   @endforeach

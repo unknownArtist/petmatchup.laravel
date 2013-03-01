@@ -19,7 +19,8 @@ class Contact_Controller extends Base_Controller {
                 ->body(Input::get('message').'<br><br><br>'. 'Phone Number:' .Input::get('phone'))
                 ->html(true)
                 ->send();
-
+        return Redirect::to('contact')
+                        ->with('message', 'Message Sent');
         //return View::make('contact.index');
     }
 }

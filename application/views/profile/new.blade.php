@@ -15,7 +15,7 @@
        </td>
        <td>
         {{ Form::label('state','Select State') }}
-        {{ Form::text('state') }}
+        {{ Form::select('state', $states) }}
      	</td>
      	<td>
      	{{ Form::label('city','City') }}
