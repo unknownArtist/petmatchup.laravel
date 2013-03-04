@@ -5,7 +5,7 @@
 
 
 <title>Petmatchup - Find your pet</title>
-
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 {{ HTML::style('css/style.css') }}
 <link href="css/navigation.css" rel="stylesheet" type="text/css" />
@@ -15,6 +15,10 @@
 {{ HTML::script('fonts/cufon-yui.js'); }}
 <script type="text/javascript"  src="fonts/Helvetica_500-Helvetica_700.font.js"></script>
 {{ HTML::script('fonts/Helvetica_500-Helvetica_700.font.js'); }}
+{{ HTML::style('css/toastr.css') }}
+{{ HTML::script('js/toastr.js') }}
+ <!--{{ HTML::style('bootstrap/css/bootstrap.css') }}
+ {{ HTML::script('bootstrap/js/bootstrap.min.js') }} -->
 <script type="text/javascript">  
     Cufon.replace('h2,h3');
 </script>
@@ -24,15 +28,33 @@
 <script src="js/jquery.faded.js" type="text/javascript"></script>
 
 {{ HTML::script('js/jquery.faded.js'); }}
+
 <script type="text/javascript">
 	   $(function(){
 	        $("#faded").faded();
 		});
 </script>
+<div id="content" class="container-fluid">
+      <div class="row-fluid">          
+          @if (Session::has('message'))
+            {{ Toastr::success(Session::get('message'))}}
+          @endif
+          @if (Session::has('warning'))
+            {{ Toastr::success(Session::get('warning'))}}
+          @endif
+          @if (Session::has('status'))
+          {{ Toastr::info(Session::get('status'))}}
+          @endif
+          @if (Session::has('error'))
+              {{ Toastr::error(Session::get('error'))}}
+          @endif
 
+          
+      </div>
+</div>
 </head>
 
-<body>
+<body style="backgroud-color:#EFF1F5">
 
 	<div class="maindiv">
 		<div class="wrapper">
@@ -98,12 +120,12 @@
 			<div class="navigation">
 				<ul id="superfish-1" class="sf-menu">
 					<li class="first"><a href="#" class="active" title="Home">Home</a></li>
-					<li><a href="#" title="Search">Search</a></li>
+					<li>{{ HTML::link('search','Search') }}</li>
 					<li><a href="#" title="About Us">About Us</a></li>
 					<li><a href="#" title="Dogs for Sale">Dogs for Sale</a></li>
 					<li><a href="#" title="Gogs for Adoption">Gogs for Adoption</a></li>
-					<li><a href="#" title="Post a Profile">Post a Profile</a></li>
-					<li class="last"><a href="contact" title="Contact Us">Contact Us</a></li>
+					<li>{{ HTML::link('profile', 'Post Profile')}}</li>
+					<li class="last">{{ HTML::link('contact','Contact us');}}</li>
 				</ul>
 			</div>
             

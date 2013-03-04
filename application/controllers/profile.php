@@ -11,7 +11,7 @@ class Profile_Controller extends Base_Controller
     }
     public function get_index()
     {
-      
+     
        $profiles = Profile::where('user_id','=',Auth::user()->id)->get();
        
        return View::make('profile.index')->with('profiles',$profiles);
@@ -25,6 +25,7 @@ class Profile_Controller extends Base_Controller
 
      public function get_new()
     {
+      
         $states = array('1'=>"Alabama",  
    '2'=>"Alaska",  
    '3'=>"Arizona",  
@@ -82,73 +83,49 @@ class Profile_Controller extends Base_Controller
 
        public function post_new()
     {
+
     	$fields = array(
-            "name" => Input::get('name'),
-            "country" => Input::get('country'),
-            "state" => Input::get('state'),
-            "city" => Input::get('city'),
-            "zipcode" => Input::get('zipcode'),
-            "kind" => Input::get('kind'),
-            "sex" => Input::get('sex'),
-            "race" => Input::get('race'),
-            "pure_bread" => Input::get('pure_bread'),
-            "papers" => Input::get('papers'),
-            "type" => Input::get('type'),
-            "amount" => Input::get('amount'),
-            "negotiable" => Input::get('negotiable'),
-            "email" => Input::get('email'),
-            "phone" => Input::get('phone'),       
+            "name"        => Input::get('name'),
+            "country"     => Input::get('country'),
+            "state"       => Input::get('state'),
+            "city"        => Input::get('city'),
+            "zipcode"     => Input::get('zipcode'),
+            "kind"        => Input::get('kind'),
+            "sex"         => Input::get('sex'),
+            "race"        => Input::get('race'),
+            "pure_bread"  => Input::get('pure_bread'),
+            "papers"      => Input::get('papers'),
+            "type"        => Input::get('type'),
+            "amount"      => Input::get('amount'),
+            "negotiable"  => Input::get('negotiable'),
+            "email"       => Input::get('email'),
+            "phone"       => Input::get('phone'), 
+            'user_id'     => Auth::user()->id,     
         );
 
-        $profile = new Profile($fields);
-        $profile->save();
+      $rules = array(
+          'name'      => 'required',
+          'zipcode'   => 'required',
+          'email'     => 'required|email',
+          'phone'     => 'required',
+          );
 
-//        $pic1 = Input::get('picture1');
-      
-//        if(isset($pic1)){
 
-//         $ext = File::extension($pic1['name']);
+        // $profile = new Profile($fields);
+      $validation = Validator::make($fields, $rules);
+      if($validation->fails())
+      {
+        return Redirect::to('profile/new')->with_errors($validation)->with_input();
+      }
+      $profile = Profile::create($fields);
       
-//             $imageName = "image".rand().date(time()).".".$ext;
-//             try {
-//                 $success = Resizer::open($pic1)
-//                     ->resize(200, 200, 'auto')
-//                     ->save($_SERVER['DOCUMENT_ROOT'] . "/" . "img/" . $imageName, 90);
-// //                    ->save($_SERVER['DOCUMENT_ROOT'] . "/empire/public/" . "uploads/companyimages/" . $imageName, 90);
+      for ($i=1; $i <= 4 ; $i++) {
+           $imageName = $this->imageCrop('picture'.$i);
+           Profilepics::create(array('picture'=>$imageName,'profile_id'=>Auth::user()->id));
+      }
+      
+      return Redirect::to('profile')->with('message',"Profile added");
 
-//                 if ($success) {
-//                   echo "image uploaded";
-                  
-//                 } else {
-//                   echo "image not uploaded";
-//                     //return Redirect::to('admin/alert/new')->with('error', 'Image not uploaded.');
-//                 }
-//             } catch (Exception $e) {
-//               echo "resizer didnt work";
-//               //  return Redirect::to('admin/alert/new')->with('error', $e->getMessage());
-//             }
-       
-           
-         // $profilepic = new Profilepics($);
-         // $profilepic->save();
-  
-//}
-       
-       // $pic2 = Input::get('picture2');
-       //  if(isset($pic2)){
-       	
-       // }
-       
-       // $pic3 = Input::get('picture3');
-       //  if(isset($pic3)){
-       	
-       // }
-       
-       // $pic4 = Input::get('picture4');
-       // if(isset($pic4)){
-       	
-       // }
-      
 }
 
 public function get_edit()
@@ -208,7 +185,9 @@ public function get_edit()
        
        
         $profile = Profile::find($id);
-        return View::make('profile/edit')
+       
+     
+        return View::make('profile.edit')
                     ->with('profile',$profile)
                     ->with('states', $states);
 }
@@ -250,7 +229,7 @@ public function post_edit()
        
             $profile->save();
             return Redirect::to('profile')
-                        ->with('message', 'Updated Successfully');
+                        ->with('message', 'Profile Updated Successfully');
          
 }
 
@@ -262,6 +241,7 @@ public function post_edit()
         return Redirect::to('profile')
                         ->with('message', 'Deleted Successfully');
         }
+
 
     }
 

@@ -16,31 +16,18 @@ class Login_Controller extends Base_Controller {
     	if(Auth::attempt(array(	'username' => Input::get('email'),	'password' => Input::get('password'))))
 		{		
 			// echo "User is logged in!";
-            return Response::json(array('logn'=>'successfull'));
+            return Redirect::to('login')->with('message','Welcome to Petmatchup');
 		}
 		
         else
         {
-        	return Redirect::to('login');
+        	return Redirect::to('login')->with('error','Username or password is incorrect');
         }
        
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    public function get_logout()
+    {
+        Auth::logout();
+        return Redirect::to('login')->with('message',"You are successfully logout");
+    }
 }

@@ -38,6 +38,7 @@ Route::Controller('auth');
 
 Route::get('login', array('as' => 'login', 'uses' => 'login@login'));
 Route::post('login', array('as' => 'login', 'uses' => 'login@login'));
+Route::get('logout', array( 'uses' => 'login@logout'));
 Route::Controller('login');
 
 Route::get('profile/index',  array('as' => 'index', 'uses' => 'profile@index' ) );
@@ -51,6 +52,7 @@ Route::Controller('profile');
 
 Route::get('search/index',  array('as' => 'index', 'uses' => 'search@index' ) );
 Route::post('search/index',  array('as' => 'index', 'uses' => 'search@index' ) );
+
 Route::Controller('search');
 
 Route::get('contact/index', array('as' => 'index', 'uses' => 'contact@index'));

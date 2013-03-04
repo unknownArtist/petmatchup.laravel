@@ -1,6 +1,9 @@
+@layout('layouts.default')
+@section('content')
+
 @foreach ($profiles as $value)
 
- {{ $value->name }}
+ {{$value->name }}
   <a href="{{ URL::to("profile/". $value->id."/edit") }}" class="btn btn-mini" alt="Edit">
                         Edit
                     </a> 
@@ -8,3 +11,5 @@
                         Delete
                     </a> 
   @endforeach
+
+@endsection

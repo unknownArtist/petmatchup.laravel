@@ -73,16 +73,17 @@ public $restful = true;
     public function post_index()
     {
      
-       $profiles = Profile::where('user_id','=',Auth::user()->id)
-       				->where('type', 'LIKE', Input::get('type'))
-       				->where('kind', 'LIKE',Input::get('kind'))
-     				->where('race','LIKE',Input::get('race'))
-     				->where('sex','LIKE',Input::get('sex'))
-     				->where('country','LIKE',Input::get('country'))
-     				->where('state','LIKE',Input::get('state'))
-     				->where('city','LIKE',Input::get('city'))
-     				->where('zipcode','LIKE',Input::get('zipcode'))
-       				->get();
+       // $profiles = Profile::where('user_id','=',Auth::user()->id)
+      $profiles = 
+      Profile::where('type', 'LIKE',    Input::get('type'))
+       			 ->where('kind', 'LIKE',    Input::get('kind'))
+     				 ->where('race','LIKE',     Input::get('race'))
+     				 ->where('sex','LIKE',      Input::get('sex'))
+     				 ->where('country','LIKE',  Input::get('country'))
+     				 ->where('state','LIKE',    Input::get('state'))
+     				 ->where('city','LIKE',     Input::get('city'))
+     				 ->where('zipcode','LIKE',  Input::get('zipcode'))
+       			 ->get();
        print_r($profiles);
     }
 

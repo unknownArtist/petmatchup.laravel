@@ -1,95 +1,94 @@
+@layout('layouts.default')
+@section('content')
 
- {{ Form::open('profile/new', 'POST') }}
+ {{ Form::open_for_files('profile/new', 'POST') }}
 
       {{ Form::token() }}
-      <table>
-      <tr>
-      <td>
+   
+       
         {{ Form::label('name','Accessible Name') }}
         {{ Form::text('name') }}
-     </td>
       
-      <td>
+      <br>
+       
       	{{ Form::label('country','Select Country') }}
-        {{ Form::text('country') }}
-       </td>
-       <td>
+        {{ Form::select('country',array('1'=>'America')) }}
+        
+        <br>
         {{ Form::label('state','Select State') }}
         {{ Form::select('state', $states) }}
-     	</td>
-     	<td>
+     	 <br>
+     	 
      	{{ Form::label('city','City') }}
-        {{ Form::text('city') }}
-		</td>
-		<td>
+        {{ Form::text('city',Input::Old('city')) }}
+		 
+		 <br>
         {{ Form::label('zipcode','Zip') }}
-        {{ Form::text('zipcode') }}
-       </td>
-       <td>
+        {{ Form::text('zipcode',Input::Old('zipcode')) }}
+        
+        <br>
         {{ Form::label('kind','Kind') }}
-        {{ Form::text('kind') }}
-		</td>
-		<td>
+        {{ Form::text('kind',Input::Old('kind')) }}
+		 
+		 <br>
         {{ Form::label('sex','Sex') }}
-        {{ Form::text('sex') }}
-		</td>
-		<td>
+        {{ Form::text('sex',array('Male'=>'Male','Female'=>'Female')) }}
+		 
+		 <br>
         {{ Form::label('race','Race') }}
-        {{ Form::text('race') }}
-		</td>
-		<td>
-        {{ Form::label('pure_bread','Pure Bred') }}
-        {{ Form::text('pure_bread') }}
-		</td>
-		<td>
+        {{ Form::text('race',Input::Old('race')) }}
+		
+
+
+		 
+        {{ Form::label('purebread','Pure Bred') }}
+        {{ Form::select('pure_bread',array('1'=>'Yes','0'=>'No')) }}
+		 <br />
+		 
         {{ Form::label('papers','Have Papers') }}
-        {{ Form::text('papers') }}
-		</td>
-		<td>
+        {{ Form::select('papers',array('1'=>'Yes','0'=>'No')) }}
+		 
+		 <br />
         {{ Form::label('type','Profile Type') }}
-        {{ Form::text('type') }}
-		</td>
-		<td>
+        {{ Form::select('type',array('1'=>'Form Mating','2'=>'For Sale','3'=>'Adoption','4'=>'Showcase')) }}
+		 <br />
+		 
         {{ Form::label('amount','Amount') }}
-        {{ Form::text('amount') }}
- 		</td>
- 		<td>
+        {{ Form::text('amount',Input::Old('amount')) }}
+ 		 <br />
+ 		 
         {{ Form::label('negotiable','Negotiable') }}
-        {{ Form::text('negotiable') }}
-		</td>
-        <td>
+        {{ Form::select('negotiable',array('1'=>'Yes','0'=>'No')) }}
+		 <br />
+         
         {{ Form::label('picture1','Select the file to upload') }}
         {{ Form::file('picture1') }}
-       </td>
-		<td>
+       <br /> 
+		 
         {{ Form::label('picture2','Select the file to upload') }}
         {{ Form::file('picture2') }}
-		</td>
-		<td>
+		 <br />
+		 
         {{ Form::label('picture3','Select the file to upload') }}
         {{ Form::file('picture3') }}
-		</td>
-		<td>
+		 <br />
+		 
         {{ Form::label('picture4','Select the file to upload') }}
         {{ Form::file('picture4') }}
-
-		 </td>
-		 <td>
-        {{ Form::label('details','Description') }}
-        {{ Form::textArea('details') }}
-		</td>
-		<td>
+<br />
+		  
+	 
         {{ Form::label('email','Email') }}
-        {{ Form::text('email') }}
-		</td>
-		<td>
+        {{ Form::text('email',Input::Old('email')) }}
+		 
+		 <br />
         {{ Form::label('phone','Phone') }}
-        {{ Form::text('phone') }}
-		</td>
-		</tr>
-		</table>
-      <div class="submit_sect">
-      {{ Form::submit('Register', array('class'=>'btn btn-large btn-primary align-right')) }}
-      </div>
+        {{ Form::text('phone',Input::Old('phone')) }}
+     
+      {{ Form::submit('Add Profile') }}
+      {{ HTML::link('profile','Back')}}
+      
 
     {{ Form::close() }}
+
+@endsection
