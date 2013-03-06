@@ -17,10 +17,13 @@
 {{ HTML::script('fonts/Helvetica_500-Helvetica_700.font.js'); }}
 {{ HTML::style('css/toastr.css') }}
 {{ HTML::script('js/toastr.js') }}
+
+
  <!--{{ HTML::style('bootstrap/css/bootstrap.css') }}
  {{ HTML::script('bootstrap/js/bootstrap.min.js') }} -->
 <script type="text/javascript">  
     Cufon.replace('h2,h3');
+
 </script>
 
 <script src="js/jquery-1.5.2.min.js" type="text/javascript"></script>
@@ -103,7 +106,13 @@
 
     {{ Form::close() }}
      <div class="loginforma">
-                    <a href="#">Forgot password</a>
+     			<ul>
+                    <li><a href="#">{{ HTML::image('images/fblogo.png'); }}</a></li>
+                    <li><a href="#">{{ HTML::image('images/googlelogo.png'); }}</a></li>
+                    <li><a href="#">{{ HTML::image('images/twitterlogo.png'); }}</a></li>                    
+                    <li><a href="#">Forgot password</a></li>
+                    
+                    </ul>
                     </div>
     				
     				</div>
